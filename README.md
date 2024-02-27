@@ -245,3 +245,33 @@ kubernetes/    kubernetes    kubernetes_f4ebe7fa    n/a
 secret/        kv            kv_966419c8            key/value secret storage
 sys/           system        system_59797446        system endpoints used for control, policy and debugging
 ```
+
+
+### Examples
+
+Enable secret engines - 
+
+```yaml
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets enable kv
+Success! Enabled the kv secrets engine at: kv/
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets enable aws
+Success! Enabled the aws secrets engine at: aws/
+
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets enable --path=sreteam kv
+Success! Enabled the kv secrets engine at: sreteam/
+
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets enable --path=DB_Team kv
+Success! Enabled the kv secrets engine at: DB_Team/
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets list
+Path          Type         Accessor              Description
+----          ----         --------              -----------
+DB_Team/      kv           kv_4b260ffa           n/a
+aws/          aws          aws_3ed1cee8          n/a
+cubbyhole/    cubbyhole    cubbyhole_63a670bf    per-token private secret storage
+identity/     identity     identity_bb56535d     identity store
+kv/           kv           kv_3b155c60           n/a
+secret/       kv           kv_966419c8           key/value secret storage
+sreteam/      kv           kv_d7005213           n/a
+sys/          system       system_59797446       system endpoints used for control, policy and debugging
+myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$
+```
