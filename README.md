@@ -39,7 +39,7 @@
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/e0881695-18f1-43e2-af63-1f6f20cd2459)
     
 
-### Install Vault
+### 1) Install Vault
 
 ```yaml
 sudo apt update && sudo apt install gpg wget
@@ -51,7 +51,7 @@ vagrant@istio-cluster:~$ vault version
 Vault v1.15.5 (0d8b67ef63815f20421c11fe9152d435af3403e6), built 2024-01-26T14:53:40Z
 ```
 
-### **Start Vault using Development Mode**
+### 2) Start Vault using Development Mode
 
 ```yaml
 vagrant@istio-cluster:~$ vault server -dev
@@ -171,6 +171,7 @@ Cluster ID      8866ed1c-3cbf-61aa-72cb-20d51320fd5e
 HA Enabled      false
 vagrant@istio-cluster:~$ 
 ```
+### 3) How to access Vault
 
 ### Vault can be accessed using UI.
 
@@ -303,7 +304,7 @@ sys/           system        system_59797446        system endpoints used for co
 ```
 
 
-### Examples
+### 4) Vault Examples CLI
 
 Enable secret engines - 
 
