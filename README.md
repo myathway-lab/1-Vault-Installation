@@ -173,11 +173,11 @@ vagrant@istio-cluster:~$
 ```
 ### 3) How to access Vault
 
-### Vault can be accessed using UI.
+### a) Vault can be accessed using UI.
 
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/3f77cd10-5b32-41c6-b671-75a7df764a1f)
 
-### Vault can be accessed using HTTP API.
+###  b) Vault can be accessed using HTTP API.
 
 [HTTP API | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/api-docs)
 
@@ -285,7 +285,7 @@ $ curl     http://127.0.0.1:8200/v1/sys/seal-status | jq
 }
 ```
 
-### **Vault can be accessed using CLI.**
+###  c) Vault can be accessed using CLI.
 
 ```yaml
 $ vault auth list
