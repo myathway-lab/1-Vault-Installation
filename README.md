@@ -1,5 +1,4 @@
 # Vault Installation & Use Cases
-[Install Vault | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/docs/install#package-manager)
 
 [Install Vault | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install)
 
