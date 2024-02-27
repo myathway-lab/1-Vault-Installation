@@ -304,7 +304,7 @@ sys/           system        system_59797446        system endpoints used for co
 ```
 
 
-### 4) Vault Examples CLI
+### Vault Examples CLI
 
 Enable secret engines - 
 
