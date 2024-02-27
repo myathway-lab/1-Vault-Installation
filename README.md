@@ -185,6 +185,62 @@ vagrant@istio-cluster:~$
 **The Vault HTTP API gives you full access to Vault using [REST like HTTP verbs](https://en.wikipedia.org/wiki/Representational_state_transfer). Every aspect of Vault can be controlled using the APIs. The Vault CLI uses the HTTP API to access Vault similar to all other consumers.**
 
 **All API routes are prefixed with `/v1/`.**
+```yaml
+$ curl     --header "X-Vault-Token: hvs.YXfiVoSSYjDv15T40SxwVH61"     http://127.0.0.1:8200/v1/sys/auth | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   995  100   995    0     0   852k      0 --:--:-- --:--:-- --:--:--  971k
+{
+  "token/": {
+    "accessor": "auth_token_bdb3a880",
+    "config": {
+      "default_lease_ttl": 0,
+      "force_no_cache": false,
+      "max_lease_ttl": 0,
+      "token_type": "default-service"
+    },
+    "description": "token based credentials",
+    "external_entropy_access": false,
+    "local": false,
+    "options": null,
+    "plugin_version": "",
+    "running_plugin_version": "v1.15.5+builtin.vault",
+    "running_sha256": "",
+    "seal_wrap": false,
+    "type": "token",
+    "uuid": "3bdf8089-dcdc-1dd6-ad0d-18b1a62307ab"
+  },
+  "request_id": "ceb8ab75-bdb8-c8ab-a73a-153a88324fa7",
+  "lease_id": "",
+  "renewable": false,
+  "lease_duration": 0,
+  "data": {
+    "token/": {
+      "accessor": "auth_token_bdb3a880",
+      "config": {
+        "default_lease_ttl": 0,
+        "force_no_cache": false,
+        "max_lease_ttl": 0,
+        "token_type": "default-service"
+      },
+      "description": "token based credentials",
+      "external_entropy_access": false,
+      "local": false,
+      "options": null,
+      "plugin_version": "",
+      "running_plugin_version": "v1.15.5+builtin.vault",
+      "running_sha256": "",
+      "seal_wrap": false,
+      "type": "token",
+      "uuid": "3bdf8089-dcdc-1dd6-ad0d-18b1a62307ab"
+    }
+  },
+  "wrap_info": null,
+  "warnings": null,
+  "auth": null
+}
+```
+
 
 ```yaml
 $ curl     http://127.0.0.1:8200/v1/sys/health | jq
