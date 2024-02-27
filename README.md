@@ -1,4 +1,4 @@
-# 1 - Vault Installation & Use Cases
+# Vault Installation & Use Cases
 
 [Install Vault | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install)
 
