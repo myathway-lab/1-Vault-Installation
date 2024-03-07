@@ -2,13 +2,24 @@
 
 [Install Vault | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install)
 
-<aside>
-💡 **Vault is an identity-based secret and encryption management system.**
+<br>
 
-</aside>
+## Summary
 
-> **Use Cases**
-> 
+1) Vault Use Cases
+2) Install Vault
+3) Start Vault using Development Mode
+
+<br>
+
+### 1)  Vault Use Cases
+
+<br>
+
+**Vault is an identity-based secret and encryption management system.**
+
+<br>
+
 - **Secrets Management**
     
     Centrally store, access, and deploy secrets across applications, systems, and infrastructure.
@@ -31,7 +42,11 @@
     Everything in Vault is path-based, and policies are no exception. Policies provide a declarative way to grant or forbid access to certain paths and operations in Vault.
     
     Policies are **deny by default**, so an empty policy grants no permission in the system.
+
     
+<br>
+
+
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/a55024ae-8d0a-4f0a-9213-2e86cde22de1)
     
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/41f9bcfe-e500-4688-a432-9e7da790b82c)
@@ -39,7 +54,7 @@
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/e0881695-18f1-43e2-af63-1f6f20cd2459)
     
 
-### 1) Install Vault
+### 2) Install Vault
 
 ```yaml
 sudo apt update && sudo apt install gpg wget
@@ -51,7 +66,7 @@ vagrant@istio-cluster:~$ vault version
 Vault v1.15.5 (0d8b67ef63815f20421c11fe9152d435af3403e6), built 2024-01-26T14:53:40Z
 ```
 
-### 2) Start Vault using Development Mode
+### 3) Start Vault using Development Mode
 
 ```yaml
 vagrant@istio-cluster:~$ vault server -dev
@@ -137,17 +152,16 @@ Root Token: hvs.etHK5dKRax3NecHIgcq5clyz
 .
 ```
 
-<aside>
-💡 **WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+**WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
 and starts unsealed with a single unseal key. The root token is already
 authenticated to the CLI, so you can immediately begin using Vault.**
 
-</aside>
+<br>
 
-<aside>
-💡 **Development mode should NOT be used in production installations!**
+**Development mode should NOT be used in production installations!**
 
-</aside>
+<br>
+
 
 ```yaml
 vagrant@istio-cluster:~$ vault status
@@ -171,21 +185,30 @@ Cluster ID      8866ed1c-3cbf-61aa-72cb-20d51320fd5e
 HA Enabled      false
 vagrant@istio-cluster:~$ 
 ```
-### 3) How to access Vault
 
-### a) Vault can be accessed using UI.
+<br>
+
+**4) How to access Vault?**
+
+<br>
+
+**4.1) Vault can be accessed using UI.**
 
 ![image](https://github.com/myathway-lab/1-Vault-Installation/assets/157335804/3f77cd10-5b32-41c6-b671-75a7df764a1f)
 
-###  b) Vault can be accessed using HTTP API.
+<br>
+
+**4.2) Vault can be accessed using HTTP API.**
 
 [HTTP API | Vault | HashiCorp Developer](https://developer.hashicorp.com/vault/api-docs)
 
-**Vault has an HTTP API that can be used to control every aspect of Vault.**
+- Vault has an HTTP API that can be used to control every aspect of Vault.
 
-**The Vault HTTP API gives you full access to Vault using [REST like HTTP verbs](https://en.wikipedia.org/wiki/Representational_state_transfer). Every aspect of Vault can be controlled using the APIs. The Vault CLI uses the HTTP API to access Vault similar to all other consumers.**
+- Vault HTTP API gives us full access to Vault using [REST like HTTP verbs](https://en.wikipedia.org/wiki/Representational_state_transfer). Every aspect of Vault can be controlled using the APIs. The Vault CLI uses the HTTP API to access Vault similar to all other consumers.**
 
-**All API routes are prefixed with `/v1/`.**
+- All API routes are prefixed with `/v1/`.
+
+
 ```yaml
 $ curl     --header "X-Vault-Token: hvs.YXfiVoSSYjDv15T40SxwVH61"     http://127.0.0.1:8200/v1/sys/auth | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -285,7 +308,7 @@ $ curl     http://127.0.0.1:8200/v1/sys/seal-status | jq
 }
 ```
 
-###  c) Vault can be accessed using CLI.
+**4.3) Vault can be accessed using CLI.**
 
 ```yaml
 $ vault auth list
@@ -304,9 +327,7 @@ sys/           system        system_59797446        system endpoints used for co
 ```
 
 
-### Vault Examples CLI
-
-Enable secret engines - 
+- Vault CLI to enable secret engines.
 
 ```yaml
 myathway@DESKTOP-QCOTPM5:/mnt/c/WINDOWS/system32$ vault secrets enable kv
